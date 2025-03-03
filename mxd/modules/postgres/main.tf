@@ -65,16 +65,16 @@ resource "kubernetes_deployment" "postgres" {
           }
 
           # Uncomment this to assign (more) resources
-          #          resources {
-          #            limits = {
-          #              cpu    = "2"
-          #              memory = "512Mi"
-          #            }
-          #            requests = {
-          #              cpu    = "250m"
-          #              memory = "50Mi"
-          #            }
-          #          }
+          resources {
+            limits = {
+              cpu    = "2"
+              memory = "512Mi"
+            }
+            requests = {
+              cpu    = "250m"
+              memory = "50Mi"
+            }
+          }
           liveness_probe {
             exec {
               command = ["pg_isready", "-U", "postgres"]

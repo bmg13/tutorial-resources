@@ -46,9 +46,6 @@ jobs:
           config: mxd/kind.config.yaml
           cluster_name: mxd
 
-      - name: "Setup Terraform"
-        uses: hashicorp/setup-terraform@v2
-
       - name: "Install nginx ingress controller"
         run: |-
           echo "::notice title=nginx ingress on KinD::For details how to run nginx ingress on KinD check https://kind.sigs.k8s.io/docs/user/ingress/#ingress-nginx"
@@ -70,6 +67,9 @@ jobs:
       - name: "Load Docker Images"
         run: |-
           kind load docker-image --name mxd data-service-api tx-identityhub tx-identityhub-sts tx-catalog-server tx-sts
+
+      - name: "Setup Terraform"
+        uses: hashicorp/setup-terraform@v3
 
       - name: "Terraform init"
         working-directory: mxd
