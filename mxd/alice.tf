@@ -42,7 +42,6 @@ module "alice-connector" {
   azure-url             = module.azurite.azurite-url
 
   ingress-host = var.alice-ingress-host
-  timeout = 600 # 10 minutes
 
   minio-config = {
     username = module.alice-minio.minio-username

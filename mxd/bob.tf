@@ -40,7 +40,6 @@ module "bob-connector" {
   azure-account-key-sas = var.bob-azure-key-sas
   azure-url             = module.azurite.azurite-url
   ingress-host          = var.bob-ingress-host
-  timeout = 600 # 10 minutes
   minio-config = {
     username = module.bob-minio.minio-username
     password = module.bob-minio.minio-password
