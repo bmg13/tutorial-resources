@@ -66,7 +66,7 @@ jobs:
           ./gradlew clean dockerize
       - name: "Load Docker Images"
         run: |-
-          kind load docker-image --name mxd data-service-api tx-identityhub tx-catalog-server tx-sts tx-identityhub-sts
+          kind load docker-image --name mxd data-service-api tx-identityhub tx-catalog-server
 
       - name: "Setup Terraform"
         uses: hashicorp/setup-terraform@v3
