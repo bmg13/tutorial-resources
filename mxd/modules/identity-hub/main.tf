@@ -20,6 +20,8 @@ resource "kubernetes_deployment" "identityhub" {
     }
   }
 
+  timeout = 600 # 10 minutes
+
   spec {
     replicas = 1
     selector {
