@@ -20,8 +20,6 @@ resource "kubernetes_deployment" "identityhub" {
     }
   }
 
-  timeout = 600 # 10 minutes
-
   spec {
     replicas = 1
     selector {
@@ -81,7 +79,7 @@ resource "kubernetes_deployment" "identityhub" {
             }
             failure_threshold = 10
             period_seconds    = 5
-            timeout_seconds   = 30
+            timeout_seconds   = 60
           }
 
           readiness_probe {
@@ -91,7 +89,7 @@ resource "kubernetes_deployment" "identityhub" {
             }
             failure_threshold = 10
             period_seconds    = 5
-            timeout_seconds   = 30
+            timeout_seconds   = 60
           }
 
           startup_probe {
@@ -101,7 +99,7 @@ resource "kubernetes_deployment" "identityhub" {
             }
             failure_threshold = 10
             period_seconds    = 5
-            timeout_seconds   = 30
+            timeout_seconds   = 60
           }
         }
       }
