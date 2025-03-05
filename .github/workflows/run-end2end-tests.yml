@@ -54,6 +54,9 @@ jobs:
             --for=condition=ready pod \
             --selector=app.kubernetes.io/component=controller \
             --timeout=90s
+          kubectl get nodes
+          kubectl describe nodes
+
       - name: Setup JDK
         uses: actions/setup-java@v4
         with:
@@ -83,6 +86,8 @@ jobs:
       - name: "Terraform apply"
         working-directory: ./mxd
         run: |-
+          kubectl get nodes
+          kubectl describe nodes
           terraform apply "$GITHUB_SHA.out"
 
       - name: "Run Health Checks"

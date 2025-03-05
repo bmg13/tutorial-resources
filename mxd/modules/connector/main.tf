@@ -27,7 +27,7 @@ resource "helm_release" "connector" {
   reuse_values      = true
   cleanup_on_fail   = true
   replace           = true
-  timeout = 600 # 10 minutes
+  timeout = 1200 # 20 minutes
 
   repository = "https://eclipse-tractusx.github.io/charts/dev"
   chart      = "tractusx-connector"
