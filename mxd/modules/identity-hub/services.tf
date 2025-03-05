@@ -16,7 +16,7 @@ resource "kubernetes_service" "ih-service" {
     name      = var.humanReadableName
     namespace = var.namespace
   }
-  timeout = 600 # 10 minutes
+
   spec {
     type = "NodePort"
     selector = {
