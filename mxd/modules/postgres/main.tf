@@ -68,11 +68,11 @@ resource "kubernetes_deployment" "postgres" {
           resources {
             limits = {
               cpu    = "2"
-              memory = "512Mi"
+              memory = "1Gi"
             }
             requests = {
-              cpu    = "250m"
-              memory = "50Mi"
+              cpu    = "500m"
+              memory = "200Mi"
             }
           }
           liveness_probe {
