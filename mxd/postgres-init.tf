@@ -62,14 +62,12 @@ locals {
 
     alice = {
       database-name     = "alice",
-      database-host     = "alice"
       database-username = "alice"
       database-password = "alice"
     }
 
     bob = {
       database-name     = "bob",
-      database-host     = "bob"
       database-username = "bob"
       database-password = "bob"
     }
