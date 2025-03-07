@@ -79,7 +79,7 @@ resource "kubernetes_deployment" "identityhub" {
             }
             failure_threshold = 10
             period_seconds    = 5
-            timeout_seconds   = 60
+            timeout_seconds   = 600
           }
 
           readiness_probe {
@@ -89,7 +89,7 @@ resource "kubernetes_deployment" "identityhub" {
             }
             failure_threshold = 10
             period_seconds    = 5
-            timeout_seconds   = 60
+            timeout_seconds   = 600
           }
 
           startup_probe {
@@ -99,7 +99,7 @@ resource "kubernetes_deployment" "identityhub" {
             }
             failure_threshold = 10
             period_seconds    = 5
-            timeout_seconds   = 60
+            timeout_seconds   = 600
           }
         }
       }

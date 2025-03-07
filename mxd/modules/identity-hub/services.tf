@@ -16,7 +16,6 @@ resource "kubernetes_service" "ih-service" {
     name      = var.humanReadableName
     namespace = var.namespace
   }
-
   spec {
     type = "NodePort"
     selector = {
