@@ -85,7 +85,7 @@ jobs:
       - name: "Terraform apply"
         working-directory: ./mxd
         run: |-
-          export TF_LOG=TRACE
+          export TF_LOG=INFO
           terraform apply "$GITHUB_SHA.out"
 
       - name: "Run Health Checks"
