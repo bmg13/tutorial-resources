@@ -56,24 +56,28 @@ locals {
   databases = {
     bdrs = {
       database-name     = "bdrs",
+      database-host     = "bdrs"
       database-username = "bdrs"
       database-password = "bdrs"
     }
 
     alice = {
       database-name     = "alice",
+      database-host     = "alice"
       database-username = "alice"
       database-password = "alice"
     }
 
     bob = {
       database-name     = "bob",
+      database-host     = "bob"
       database-username = "bob"
       database-password = "bob"
     }
 
     alice-catalogserver = {
       database-name     = "catalogserver"
+      database-host     = "catalogserver"
       database-username = "catalogserver"
       database-password = "catalogserver"
     }
