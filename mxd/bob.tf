@@ -47,7 +47,7 @@ module "bob-connector" {
   }
   useSVE = var.useSVE
 }
-
+#module.bob-identityhub.kubernetes_ingress_v1.api-ingress
 module "bob-identityhub" {
   depends_on = [module.bob-connector] // depends because of the vault
   source     = "./modules/identity-hub"
@@ -56,11 +56,11 @@ module "bob-identityhub" {
     password = local.databases.bob.database-password
     url      = "jdbc:postgresql://${local.bob-postgres.database-host}/${local.databases.bob.database-name}"
   }
-  humanReadableName = var.bob-identityhub-host
+  humanReadableName = "bob-ih"
   namespace         = kubernetes_namespace.mxd-ns.metadata.0.name
   participantId     = var.bob-did
   vault-url         = "http://bob-vault:8200"
-  url-path          = var.bob-identityhub-host
+  url-path          = "/bob-ih"
   useSVE            = var.useSVE
 }
 

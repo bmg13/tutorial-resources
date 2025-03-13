@@ -63,7 +63,7 @@ module "alice-identityhub" {
   namespace         = kubernetes_namespace.mxd-ns.metadata.0.name
   participantId     = var.alice-did
   vault-url         = local.vault-url
-  url-path          = var.alice-identityhub-host
+  url-path          = "/alice-ih"
   useSVE            = var.useSVE
 }
 

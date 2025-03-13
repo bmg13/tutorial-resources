@@ -51,3 +51,9 @@ variable "bob-catalogserver-host" {
   description = "Kubernetes service name (=Host) for Bob's Catalog Server"
   default     = "bob-cs"
 }
+
+variable "bob-identityhub-url-path" {
+  description = "URL path for Identity Hub"
+  type        = string
+  default     = "/bob-ih"
+}
