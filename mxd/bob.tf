@@ -60,7 +60,7 @@ module "bob-identityhub" {
   namespace         = kubernetes_namespace.mxd-ns.metadata.0.name
   participantId     = var.bob-did
   vault-url         = "http://bob-vault:8200"
-  url-path          = "/bob-ih"
+  url-path          = "bob-ih"
   useSVE            = var.useSVE
 }
 
