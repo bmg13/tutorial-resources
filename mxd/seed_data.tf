@@ -29,12 +29,18 @@ resource "kubernetes_job" "seed_connectors_via_mgmt_api" {
     name      = "seed-connectors"
     namespace = kubernetes_namespace.mxd-ns.metadata.0.name
   }
+  timeouts {
+    create = "30m"  # Increase the timeout for job creation to 30 minutes
+  }
   spec {
+    active_deadline_seconds = 600  # Ensure the job has a deadline of 600 seconds
+    backoff_limit           = 4    # Keep retry limit for failed jobs
+    ttl_seconds_after_finished = 600  # Cleanup after job completion
+
+    parallelism = 1
     // run only once
     completions     = 1
     completion_mode = "NonIndexed"
-    // clean up any job pods after 90 seconds, failed or succeeded
-    ttl_seconds_after_finished = "90"
     template {
       metadata {
         name = "seed-connectors"
