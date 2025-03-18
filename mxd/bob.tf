@@ -56,7 +56,7 @@ module "bob-identityhub" {
     password = local.databases.bob.database-password
     url      = "jdbc:postgresql://${local.bob-postgres.database-host}/${local.databases.bob.database-name}"
   }
-  humanReadableName = "bob-ih"
+  humanReadableName = var.bob-identityhub-host
   namespace         = kubernetes_namespace.mxd-ns.metadata.0.name
   participantId     = var.bob-did
   vault-url         = "http://bob-vault:8200"
